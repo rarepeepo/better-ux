@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "better-ux",
+	"version": "1.0",
+	"name": "Better UX",
+	"description": "This mod adds various little UI improvements to enhance the overall user experience.",
+	"authors": [
+		"rarepeepo"
+	],
+	"contact": {
+		"homepage": "https://github.com/rarepeepo/better-ux"
+	},
+	"license": "GPL-3.0-or-later",
+	"icon": "assets/better-ux/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"rare.peepo.BetterUX"
+		],
+		"modmenu": [
+			"rare.peepo.ModMenu"
+		]
+	},
+	"mixins": [
+		"better-ux.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.7",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"midnightlib": ">=1.5.3"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

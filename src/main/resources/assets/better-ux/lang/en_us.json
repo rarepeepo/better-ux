@@ -1,0 +1,21 @@
+{
+  "better-ux.midnightconfig.title"                     : "BetterUI Settings",
+  
+  "better-ux.midnightconfig.closeOnRightClick"         : "Close on right click",
+  "better-ux.midnightconfig.closeOnRightClick.tooltip" : "Close an open screen by just right-clicking anywhere.",
+  
+  "better-ux.midnightconfig.closeScreenButton"         : "Close Screen Mouse Button",
+  "better-ux.midnightconfig.closeScreenButton.tooltip" : "Configures which mouse button closes an open screen when you click outside it.",
+  
+  "better-ux.midnightconfig.reverseHotbarScroll"         : "Reverse Hotbar Scroll",
+  "better-ux.midnightconfig.reverseHotbarScroll.tooltip" : "Reverses the mouse-wheel scrolling direction of the inventory hotbar.",
+  
+  "better-ux.midnightconfig.focusSearchField"          : "Always focus search field",
+  "better-ux.midnightconfig.focusSearchField.tooltip"  : "Automatically focus the search field when opening a dialog with a recipe book.",
+  
+  "better-ux.midnightconfig.enum.MouseButton.LEFT"     : "Left",
+  "better-ux.midnightconfig.enum.MouseButton.RIGHT"    : "Right",
+  "better-ux.midnightconfig.enum.MouseButton.MIDDLE"   : "Middle",
+  "better-ux.midnightconfig.enum.MouseButton.ANY"      : "Any",
+  "better-ux.midnightconfig.enum.MouseButton.NONE"     : "None"
+}

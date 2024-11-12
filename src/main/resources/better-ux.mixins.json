@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "rare.peepo.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"HandledScreenMixin",
+		"CraftingScreenMixin",
+		"InventoryScreenMixin",
+		"RecipeBookWidgetMixin",
+		"PlayerInventoryMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
