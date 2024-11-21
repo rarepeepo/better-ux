@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[49,)"
+#issueTrackerURL = ""
+license = "GPL-3.0-or-later"
+
+[[mods]]
+modId = "betterux"
+version = "${version}"
+displayName = "BetterUX"
+authors = "rarepeepo"
+description = '''
+This mod adds various little UI improvements to enhance the overall user experience.
+'''
+#logoFile = ""
+
+[[dependencies.betterux]]
+modId = "forge"
+mandatory = true
+versionRange = "[49,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.betterux]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.betterux]]
+modId = "architectury"
+mandatory = true
+versionRange = "[11.1.17,)"
+ordering = "AFTER"
+side = "BOTH"
