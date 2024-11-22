@@ -1,0 +1,34 @@
+{
+  "betterux.midnightconfig.title"                       : "BetterUI Settings",
+  
+  "betterux.midnightconfig.closeOnRightClick"           : "Close on right click",
+  "betterux.midnightconfig.closeOnRightClick.tooltip"   : "Close an open screen by just right-clicking anywhere.",
+  
+  "betterux.midnightconfig.closeScreenButton"           : "Close Screen Mouse Button",
+  "betterux.midnightconfig.closeScreenButton.tooltip"   : "Configures which mouse button closes an open screen when you click anywhere outside of it.",
+  
+  "betterux.midnightconfig.reverseHotbarScroll"         : "Reverse Hotbar Scroll",
+  "betterux.midnightconfig.reverseHotbarScroll.tooltip" : "Reverses the mouse-wheel scrolling direction of the inventory hotbar.",
+  
+  "betterux.midnightconfig.focusSearchField"            : "Always focus search field",
+  "betterux.midnightconfig.focusSearchField.tooltip"    : "Automatically focus the search field when opening a dialog with a recipe book.",
+  
+  "betterux.midnightconfig.showSortButton"              : "Show sort button",
+  "betterux.midnightconfig.showSortButton.tooltip"      : "Enables or disables the sort button in inventory screens.",
+  
+  "betterux.midnightconfig.showTakeButton"              : "Show take-all button",
+  "betterux.midnightconfig.showTakeButton.tooltip"      : "Enables or disables the take-all button in inventory screens.",
+  
+  "betterux.midnightconfig.showStoreButton"             : "Show store-all button",
+  "betterux.midnightconfig.showStoreButton.tooltip"     : "Enables or disables the store-all button in inventory screens.",
+  
+  "betterux.midnightconfig.enum.MouseButton.LEFT"       : "Left",
+  "betterux.midnightconfig.enum.MouseButton.RIGHT"      : "Right",
+  "betterux.midnightconfig.enum.MouseButton.MIDDLE"     : "Middle",
+  "betterux.midnightconfig.enum.MouseButton.ANY"        : "Any",
+  "betterux.midnightconfig.enum.MouseButton.NONE"       : "None",
+  
+  "betterux.sortButton.tooltip"                         : "Sort inventory",
+  "betterux.takeButton.tooltip"                         : "Take all items",
+  "betterux.storeButton.tooltip"                        : "Store all items"
+}
