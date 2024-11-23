@@ -2,11 +2,11 @@ package rare.peepo.forge;
 
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import rare.peepo.client.BetterUXClient;
 import rare.peepo.BetterUX;
+import rare.peepo.client.BetterUXClient;
 
 @Mod(BetterUX.ID)
 public final class BetterUXForge {

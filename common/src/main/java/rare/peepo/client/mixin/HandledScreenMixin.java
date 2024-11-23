@@ -2,17 +2,6 @@ package rare.peepo.client.mixin;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import rare.peepo.Log;
-import rare.peepo.client.config.*;
-import rare.peepo.client.gui.IconButtonWidget;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.DrawContext;
@@ -27,8 +16,18 @@ import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import rare.peepo.Log;
+import rare.peepo.client.config.Config;
+import rare.peepo.client.config.MouseButton;
+import rare.peepo.client.gui.IconButtonWidget;
 
-@Environment(value=EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 @Mixin(HandledScreen.class)
 public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen implements ScreenHandlerProvider<T> {
     
@@ -53,17 +52,17 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
     @Inject(method = "mouseClicked(DDI)Z", at = @At("HEAD"))
     public final void onMouseClicked(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> ci) {
         if (Config.closeOnRightClick && button == MouseButton.RIGHT.ordinal()) {
-            Log.info("right click");
+            Log.debug("right click");
             var slot = getSlotAt(mouseX, mouseY);
             if (slot != null)
-                Log.info("clicked on slot: " + slot.id);
+                Log.debug("clicked on slot: " + slot.id);
             else
                 close();
         } else {
             if (Config.closeScreenButton.ordinal() != button && Config.closeScreenButton != MouseButton.ANY)
                 return;
             if (isClickOutsideBounds(mouseX, mouseY, x, y, button)) {
-                Log.info("Closing dialog");
+                Log.debug("Closing dialog");
                 close();
             }
         }
@@ -83,7 +82,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.x + this.backgroundWidth - 18,
                     this.y + (backgroundHeight - 95) + p,
                     "sort", button -> {
-                        Log.info("Clicked sort inventory button");
+                        Log.debug("Clicked sort inventory button");
                     });
             this.addDrawableChild(b);
             buttons.add(b);
@@ -97,7 +96,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.x + this.backgroundWidth - 18,
                     this.y + 6,
                     "sort", button -> {
-                        Log.info("Clicked sort container button");
+                        Log.debug("Clicked sort container button");
                     });
             this.addDrawableChild(b);
         }
@@ -107,7 +106,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.x + this.backgroundWidth - 29,
                     this.y + (backgroundHeight - 95),
                     "take", button -> {
-                        Log.info("Clicked take button");
+                        Log.debug("Clicked take button");
                     });
             buttons.add(b);
             this.addDrawableChild(b);
@@ -118,7 +117,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.x + this.backgroundWidth - 40,
                     this.y + (backgroundHeight - 95),
                     "store", button -> {
-                        Log.info("Clicked store button");
+                        Log.debug("Clicked store button");
                     });
             buttons.add(b);
             this.addDrawableChild(b);

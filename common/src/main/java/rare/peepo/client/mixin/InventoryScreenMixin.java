@@ -1,12 +1,5 @@
 package rare.peepo.client.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import rare.peepo.Log;
-import rare.peepo.client.config.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.AbstractInventoryScreen;
@@ -15,8 +8,14 @@ import net.minecraft.client.gui.screen.recipebook.RecipeBookProvider;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.text.Text;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import rare.peepo.Log;
+import rare.peepo.client.config.Config;
 
-@Environment(value= EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 @Mixin(InventoryScreen.class)
 public abstract class InventoryScreenMixin extends AbstractInventoryScreen<PlayerScreenHandler>
     implements RecipeBookProvider {
@@ -28,7 +27,7 @@ public abstract class InventoryScreenMixin extends AbstractInventoryScreen<Playe
     
     @Inject(method = "init", at = @At("TAIL"))
     public void initialize(CallbackInfo ci) {
-        Log.info("Initializing InventoryScreen");
+        Log.debug("Initializing InventoryScreen");
         if (Config.focusSearchField)
             setFocused(getRecipeBookWidget());
     }

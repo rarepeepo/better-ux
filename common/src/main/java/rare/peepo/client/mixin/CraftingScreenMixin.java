@@ -1,16 +1,5 @@
 package rare.peepo.client.mixin;
 
-import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-
-import rare.peepo.Log;
-import rare.peepo.client.config.Config;
-
-import org.spongepowered.asm.mixin.injection.At;
-
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.gui.screen.ingame.CraftingScreen;
@@ -20,8 +9,16 @@ import net.minecraft.client.gui.screen.recipebook.RecipeBookWidget;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.text.Text;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import rare.peepo.Log;
+import rare.peepo.client.config.Config;
 
-@Environment(value= EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 @Mixin(CraftingScreen.class)
 public abstract class CraftingScreenMixin extends HandledScreen<CraftingScreenHandler> implements RecipeBookProvider {
     
@@ -35,7 +32,7 @@ public abstract class CraftingScreenMixin extends HandledScreen<CraftingScreenHa
     
     @Inject(method = "init", at = @At("TAIL"))
     public void initialize(CallbackInfo ci) {
-        Log.info("Initializing CraftingScreen");
+        Log.debug("Initializing CraftingScreen");
         if (Config.focusSearchField)
             setFocused(getRecipeBookWidget());
     }
@@ -43,6 +40,6 @@ public abstract class CraftingScreenMixin extends HandledScreen<CraftingScreenHa
     @Inject(method = "mouseClicked(DDI)Z", at = @At("HEAD"))
     public final void on_mouse_clicked(double mouseX, double mouseY, int button, CallbackInfoReturnable<Boolean> ci) {
         var cs = (CraftingScreen)(Object)this;
-        Log.info(cs);
+        Log.debug(cs);
     }
 }

@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import rare.peepo.BetterUX;
 
-@Environment(value=EnvType.CLIENT)
+@Environment(EnvType.CLIENT)
 public class IconButtonWidget extends TexturedButtonWidget {
     public static final int Size = 10;
 
