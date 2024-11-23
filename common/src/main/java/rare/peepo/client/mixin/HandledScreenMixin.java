@@ -26,6 +26,9 @@ import rare.peepo.Log;
 import rare.peepo.client.config.Config;
 import rare.peepo.client.config.MouseButton;
 import rare.peepo.client.gui.IconButtonWidget;
+import rare.peepo.network.Network;
+import rare.peepo.network.SortPacket;
+import rare.peepo.network.TransferPacket;
 
 @Environment(EnvType.CLIENT)
 @Mixin(HandledScreen.class)
@@ -83,6 +86,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.y + (backgroundHeight - 95) + p,
                     "sort", button -> {
                         Log.debug("Clicked sort inventory button");
+                        sortInventory(true);
                     });
             this.addDrawableChild(b);
             buttons.add(b);
@@ -97,6 +101,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.y + 6,
                     "sort", button -> {
                         Log.debug("Clicked sort container button");
+                        sortInventory(false);
                     });
             this.addDrawableChild(b);
         }
@@ -107,6 +112,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.y + (backgroundHeight - 95),
                     "take", button -> {
                         Log.debug("Clicked take button");
+                        transferInventory(false);
                     });
             buttons.add(b);
             this.addDrawableChild(b);
@@ -118,6 +124,7 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
                     this.y + (backgroundHeight - 95),
                     "store", button -> {
                         Log.debug("Clicked store button");
+                        transferInventory(true);
                     });
             buttons.add(b);
             this.addDrawableChild(b);
@@ -154,5 +161,13 @@ public abstract class HandledScreenMixin<T extends ScreenHandler> extends Screen
     
     boolean IsEnchantmentScreen() {
         return this.getScreenHandler() instanceof EnchantmentScreenHandler;
+    }
+    
+    void sortInventory(boolean playerInventory) {
+        Network.sendToServer(new SortPacket(playerInventory));
+    }
+    
+    void transferInventory(boolean storeItems) {
+        Network.sendToServer(new TransferPacket(storeItems));
     }
 }

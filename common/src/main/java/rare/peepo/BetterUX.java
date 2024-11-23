@@ -1,5 +1,7 @@
 package rare.peepo;
 
+import rare.peepo.network.Network;
+
 public final class BetterUX {
     public static final String ID = "betterux";
 
@@ -9,5 +11,7 @@ public final class BetterUX {
     public static void onInitialize() {
         // Write common init code here.
         Log.info("Initializing BetterUX");
+        
+        Network.init();
     }
 }
