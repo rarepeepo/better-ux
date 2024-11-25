@@ -32,11 +32,12 @@
     }
   ],
   "depends": {
-    "fabricloader": ">=0.16.9",
+    "fabricloader": ">=0.15.7",
     "minecraft": "~1.20.4",
     "java": ">=17",
     "architectury": ">=11.1.17",
-    "fabric-api": "*"
+    "fabric-api": "*",
+    "midnightlib": ">=1.5.3"
   },
   "suggests": {
     "another-mod": "*"

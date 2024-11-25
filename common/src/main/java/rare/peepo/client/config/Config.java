@@ -1,26 +1,26 @@
 package rare.peepo.client.config;
 
-//import eu.midnightdust.lib.config.MidnightConfig;
+import eu.midnightdust.lib.config.MidnightConfig;
 
-public class Config /*extends MidnightConfig*/ {
-//    @Entry
+public class Config extends MidnightConfig {
+    @Entry
     public static boolean closeOnRightClick = true;
     
-//    @Entry
+    @Entry
     public static MouseButton closeScreenButton = MouseButton.ANY;
     
-//    @Entry
+    @Entry
     public static boolean reverseHotbarScroll = false;
     
-//    @Entry
+    @Entry
     public static boolean focusSearchField = true;
     
-//    @Entry
+    @Entry
     public static boolean showSortButton = true;
     
-//    @Entry
+    @Entry
     public static boolean showTakeButton = true;
     
-//    @Entry
+    @Entry
     public static boolean showStoreButton = true;
 }
