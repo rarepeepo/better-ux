@@ -6,12 +6,12 @@ license = "GPL-3.0-or-later"
 [[mods]]
 modId = "betterux"
 version = "${version}"
-displayName = "BetterUX"
+displayName = "Better UX"
 authors = "rarepeepo"
 description = '''
 This mod adds various little UI improvements to enhance the overall user experience.
 '''
-#logoFile = ""
+logoFile = "assets/betterux/icon.png"
 
 [[dependencies.betterux]]
 modId = "forge"

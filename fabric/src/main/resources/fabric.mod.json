@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "betterux",
   "version": "${version}",
-  "name": "BetterUX",
+  "name": "Better UX",
   "description": "This mod adds various little UI improvements to enhance the overall user experience.",
   "authors": [
     "rarepeepo"
   ],
   "contact": {
-    "homepage": "https://github.com/rarepeepo/better-ux"
+    "sources": "https://github.com/rarepeepo/better-ux"
   },
   "license": "GPL-3.0-or-later",
   "icon": "assets/betterux/icon.png",
@@ -38,8 +38,5 @@
     "architectury": ">=11.1.17",
     "fabric-api": "*",
     "midnightlib": ">=1.5.3"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
