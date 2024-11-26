@@ -9,9 +9,10 @@ version = "${version}"
 displayName = "Better UX"
 authors = "rarepeepo"
 description = '''
-This mod adds various little UI improvements to enhance the overall user experience.
+This mod adds various little UX improvements to enhance the overall user experience.
 '''
 logoFile = "assets/betterux/icon.png"
+displayURL = "https://modrinth.com/mod/better-ux"
 
 [[dependencies.betterux]]
 modId = "forge"

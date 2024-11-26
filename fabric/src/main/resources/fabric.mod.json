@@ -3,11 +3,12 @@
   "id": "betterux",
   "version": "${version}",
   "name": "Better UX",
-  "description": "This mod adds various little UI improvements to enhance the overall user experience.",
+  "description": "This mod adds various little UX improvements to enhance the overall user experience.",
   "authors": [
     "rarepeepo"
   ],
   "contact": {
+    "homepage": "https://modrinth.com/mod/better-ux",
     "sources": "https://github.com/rarepeepo/better-ux"
   },
   "license": "GPL-3.0-or-later",

@@ -1,5 +1,5 @@
 # Better UX
-A mod for minecraft that adds various little UI improvements to enhance the overall user experience.
+A mod for minecraft that adds various little UX improvements to enhance the overall user experience.
 
 ## Building
 Clone the repo with:
