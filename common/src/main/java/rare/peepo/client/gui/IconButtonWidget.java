@@ -27,7 +27,7 @@ public class IconButtonWidget extends ButtonWidget {
     }
 
     @Override
-    public void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
+    public void renderButton(DrawContext context, int mouseX, int mouseY, float delta) {
         context.drawTexture(this.isHovered() ? texture_2 : texture_1, this.getX(), this.getY(),
                 0, 0, 0, this.width, this.height, this.width, this.height);
     }
