@@ -117,7 +117,7 @@ public final class InventoryUtils {
     static boolean canMergeInto(ItemStack dst, ItemStack src) {
         if (dst.getCount() == dst.getMaxCount())
             return false;
-        if (!ItemStack.canCombine(dst, src))
+        if (!ItemStack.areItemsAndComponentsEqual(dst, src))
             return false;
         if (dst.getDamage() != src.getDamage())
             return false;
